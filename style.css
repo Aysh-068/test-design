@@ -1,0 +1,751 @@
+/* General Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll due to potential overflows */
+    background-color: #f8f8f8; /* Light background for the whole page outside sections */
+}
+
+/* Custom Colors and Variables (exact from design where possible) */
+:root {
+    --primary-green: #37d399; /* Bright green used for highlights, icons, buttons */
+    --dark-green-text: #0f021e; /* Darker green for main text, logo, phone number */
+    --light-grey-text: #6c757d; /* Standard muted text color */
+    --dark-bg-color: #0f021e; /* Background for hero overlay, services section, footer */
+    --white: #ffffff;
+    --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Consistent card shadow */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    font-weight: 700;
+}
+
+p {
+    color: var(--light-grey-text);
+}
+
+.small-text {
+    font-size: 0.9rem;
+}
+
+/* Navbar */
+.custom-navbar {
+    background-color: var(--white);
+    padding: 1.2rem 0; /* Adjust padding for height */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.custom-navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem; /* Larger brand text */
+    color: var(--dark-green-text) !important;
+}
+
+.custom-navbar .navbar-brand .fa-plane-departure {
+    color: var(--primary-green);
+    font-size: 1.5rem; /* Icon size relative to text */
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: var(--dark-green-text) !important;
+    font-weight: 600;
+    margin-right: 2rem; /* Increased spacing between nav items */
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover,
+.custom-navbar .navbar-nav .nav-link.active {
+    color: var(--primary-green) !important;
+}
+
+/* Dropdown menu styling */
+.custom-navbar .dropdown-menu {
+    background-color: var(--white);
+    border: none; /* Remove default border */
+    box-shadow: var(--card-shadow); /* Soft shadow for dropdowns */
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    min-width: 10rem;
+}
+
+.custom-navbar .dropdown-item {
+    color: var(--dark-green-text);
+    font-weight: 500;
+    padding: 0.7rem 1.2rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.custom-navbar .dropdown-item:hover,
+.custom-navbar .dropdown-item.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+}
+
+/* Right-side contact info */
+.custom-contact-info {
+    margin-left: 3rem; /* Spacing from nav links */
+    display: flex;
+    align-items: center; /* Vertically center the icon and text block */
+}
+
+.custom-chat-icon {
+    font-size: 2.5rem; /* Larger icon */
+    color: var(--primary-green);
+    line-height: 1; /* Align icon vertically */
+    margin-right: 0.5rem !important; /* Adjust icon spacing */
+}
+
+.custom-contact-info > div {
+    display: flex;
+    flex-direction: column; /* Stack "Need help?" and phone number vertically */
+    justify-content: center; /* Vertically center the text block */
+}
+
+.custom-contact-info small {
+    color: var(--light-grey-text);
+    font-size: 0.8rem; /* Smaller "Need help?" text */
+    line-height: 1.2;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.custom-contact-info .custom-phone-number {
+    color: var(--dark-green-text) !important;
+    font-weight: 700;
+    font-size: 1.1rem; /* Larger phone number */
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+/* Navbar Toggler for mobile */
+.custom-navbar .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.custom-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2826, 110, 77, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.hero-section {
+    background-image: url('hero-img.jpg');
+    background-size: cover;
+    background-position: center 60%;
+    min-height: 90vh;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 2, 30, 0.4);
+    z-index: 0;
+}
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.hero-section .highlight {
+    color: var(--primary-green);
+}
+
+.hero-section p.lead {
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.custom-btn-learn-more {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    color: #fff;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.custom-btn-learn-more:hover {
+    background-color: var(--dark-green-text);
+    border-color: var(--dark-green-text);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* About Us Section */
+.about-us-section {
+    background-color: var(--white);
+    padding: 80px 0;
+}
+
+.about-us-section .small-text {
+    color: var(--primary-green);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-us-section h2 {
+    color: #333;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.about-us-section p.lead {
+    color: var(--light-grey-text);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* MODIFIED: About Us Image Grid for staggered layout */
+.about-images-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Align items to the start of the cross axis */
+    gap: 10px; /* Space between flex items */
+    /* Removed justify-content: center to allow for staggering */
+}
+
+.about-images-grid .col-6 {
+    flex: 0 0 calc(50% - 5px); /* Exactly 50% width minus half of the gap */
+    max-width: calc(50% - 5px); /* Max width for stability */
+    padding: 0; /* Remove padding here as gap handles spacing */
+    position: relative; /* Allow for relative positioning */
+    box-shadow: var(--card-shadow); /* Apply shadow directly to col-6 for consistency */
+    border-radius: 0.8rem; /* Apply border-radius directly to col-6 */
+    overflow: hidden; /* Hide overflowing content if image is slightly larger */
+}
+
+.about-images-grid img {
+    border-radius: 0.8rem; /* Rounded corners for images */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    object-fit: cover; /* Fill the area, cropping if necessary */
+    min-height: 200px; /* Minimum height for visual consistency */
+}
+
+/* Specific positioning for the images to create stagger effect */
+.about-images-grid .col-6:nth-child(2) { /* Top-right image (Woman with passport) */
+    margin-top: 50px; /* Shift down */
+}
+
+.about-images-grid .col-6:nth-child(4) { /* Bottom-right image (People discussing) */
+    margin-top: -50px; /* Shift up to align with the first column more */
+    /* This aligns the top of this image with the top-right image's middle,
+       and the bottom of this image with the bottom-left image's bottom.
+       Further tweaks may be needed based on exact image heights. */
+}
+
+/* Card Styling for 10+ Years Experience */
+.about-us-section .card-10-years-experience {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-radius: 0.8rem;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative; /* Needed for pseudo-elements */
+    overflow: hidden; /* Important to contain the dots */
+}
+
+/* MODIFIED: Green dots pattern using pseudo-element */
+.about-us-section .card-10-years-experience::before {
+    content: '';
+    position: absolute;
+    top: -50px; /* Adjust as needed */
+    left: -50px; /* Adjust as needed */
+    right: -50px;
+    bottom: -50px;
+    background-size: 20px 20px; /* Size of each dot and spacing */
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 2px, transparent 0); /* White dots, slightly transparent */
+    opacity: 1; /* Ensure visibility */
+    z-index: 1; /* Behind text but above background */
+    pointer-events: none; /* Allows clicks through the pattern */
+}
+
+.about-us-section .card-10-years-experience .card-body {
+    padding: 1.5rem;
+    position: relative;
+    z-index: 2; /* Ensure text is above the pattern */
+    text-align: center; /* Center the text inside */
+}
+
+/* MODIFIED: Font size for "10+" to match new sample */
+.about-us-section .card-10-years-experience h2 {
+    color: var(--white);
+    font-size: 3.5rem; /* Large as in sample */
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+/* MODIFIED: Styling for "Years Of Experience" to match new sample */
+.about-us-section .card-10-years-experience p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem; /* Smaller font size */
+    line-height: 1.2;
+    margin-top: 0.2rem; /* Reduced margin */
+    text-align: center; /* Ensure text is centered */
+}
+
+
+.content-block .fa-check-circle {
+    color: var(--primary-green);
+    font-size: 1.3rem;
+    margin-top: 0.2rem;
+}
+
+.content-block span {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.content-block small.text-muted {
+    display: block;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--light-grey-text) !important;
+}
+
+.custom-btn-read-more {
+    background-color: var(--dark-green-text);
+    border-color: var(--dark-green-text);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.custom-btn-read-more:hover {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Adventure Unleashed Section (Our Services) - Reverted to previous state until further clarification */
+.adventure-unleashed-section {
+    background-color: var(--dark-bg-color);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.adventure-unleashed-section .small-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+}
+adventure-unleashed-section .container {
+  text-align: left !important; /* Override Bootstrap's text-center for the container */
+}
+
+.adventure-unleashed-section .small-text {
+  color: white !important; /* Make "Our Services" white */
+  font-weight: bold; /* Make "Our Services" bold */
+  text-align: left !important;
+}
+
+.adventure-unleashed-section h2 {
+  text-align: left !important; /* Ensure the main heading is left-aligned */
+  /* The 'text-white' class is already making it white, so no need to explicitly add 'color: white;' here */
+}
+
+.adventure-unleashed-section h2 {
+    color: var(--white);
+    font-size: 2.8rem;
+    margin-bottom: 3.5rem;
+}
+
+.adventure-unleashed-section .section-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('services-bg.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.adventure-unleashed-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.service-card {
+    border: none;
+    border-radius: 0.8rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--white);
+    padding: 1.5rem;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card .icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    color: var(--white);
+    font-size: 0.8rem; /* Reduced from 2.2rem */
+}
+
+
+.service-card .card-title {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.service-card .card-text {
+    color: var(--light-grey-text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Footer */
+.footer {
+    background-color: #0f021e;
+    background-image: url('footer-bg.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: var(--white);
+    padding: 80px 0 30px;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 2, 30, 0.85);
+    z-index: 0;
+}
+
+.footer .container {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.footer-brand .fa-plane-departure {
+    color: var(--primary-green);
+    font-size: 1.5rem;
+}
+
+.footer p.footer-about-text {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.footer h5 {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer .footer-links li a {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-links li a:hover {
+    color: var(--primary-green) !important;
+}
+
+.footer .footer-links .small-check,
+.footer .footer-links .small-arrow {
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+    color: var(--primary-green) !important;
+}
+
+.footer .social-icons a {
+    font-size: 1.2rem;
+     color: white !important;
+    margin-right: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+
+/* If you want a subtle hover effect (optional) */
+.footer .social-icons a:hover {
+    opacity: 0.8; /* Slightly dim on hover */
+}
+
+
+.gallery-grid .col-4 {
+    /* Set a fixed height for the container of each image */
+    height: 100px; /* Adjust this value as needed to your desired image height */
+    overflow: hidden; /* Hide any part of the image that overflows this fixed height */
+
+    /* Use flexbox to center the image within its fixed-size container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .gallery-grid img {
+    width: 100%; /* Make the image fill the width of its parent .col-4 div */
+    height: 100%; /* Make the image fill the height of its parent .col-4 div */
+    object-fit: cover; /* This is key: it scales the image to cover the entire area, cropping if necessary */
+
+    /* Your existing styles (already present, just for context) */
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Your hover effect remains the same */
+.gallery-grid img:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    z-index: 10; /* make hovered image appear above others */
+    position: relative;
+}
+
+.footer-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer .copyright-section {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6) !important;
+    padding-top: 1rem;
+}
+
+.footer .copyright-section a {
+    color: rgba(255, 255, 255, 0.6) !important;
+    transition: color 0.3s ease;
+}
+
+.footer .copyright-section a:hover {
+    color: var(--primary-green) !important;
+}
+
+/* For the list items in Service Menu and Useful Link */
+.footer-links li {
+    margin-bottom: 0.5rem; /* Add vertical space between list items */
+}
+
+/* Make RouteX bigger */
+.footer-brand {
+    font-size: 2.5rem; /* Adjust this value to your desired size */
+    font-weight: bold; /* Make it bold */
+}
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .custom-navbar .navbar-collapse {
+        background-color: var(--white);
+        margin-top: 10px;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: var(--card-shadow);
+    }
+    .custom-navbar .navbar-nav .nav-link {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+    .custom-contact-info {
+        margin-left: 0;
+        margin-top: 1rem;
+        justify-content: center;
+        text-align: center;
+    }
+    .custom-contact-info small,
+    .custom-contact-info .custom-phone-number {
+        text-align: center;
+    }
+    .hero-section {
+        min-height: 70vh;
+        padding: 80px 0;
+    }
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    .hero-section p.lead {
+        font-size: 1rem;
+    }
+    .about-us-section .content-block {
+        padding-left: 0 !important;
+        margin-top: 2rem;
+    }
+    /* MODIFIED: Reset image grid on smaller screens to be simpler */
+    .about-images-grid {
+        display: flex; /* Keep flexbox */
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center them */
+        gap: 20px; /* Add more gap when stacked */
+    }
+
+    .about-images-grid .col-6 {
+        flex: 0 0 80%; /* Make them narrower to allow some margin */
+        max-width: 80%;
+        margin-top: 0 !important; /* Remove specific top shifts */
+    }
+    .about-images-grid img {
+        min-height: 250px; /* Increase min-height for better visibility */
+    }
+    .about-us-section h2.display-5 {
+        font-size: 2.2rem;
+    }
+    .service-card {
+        margin-bottom: 1.5rem;
+    }
+    .footer .text-md-start,
+    .footer .text-md-end {
+        text-align: center !important;
+    }
+    .footer-brand {
+        text-align: center;
+    }
+    .footer p.footer-about-text {
+        text-align: center;
+    }
+    .footer .social-icons {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .footer h5 {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+    .footer .footer-links {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .footer .gallery-grid {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        min-height: 60vh;
+        padding: 60px 0;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section p.lead {
+        font-size: 0.9rem;
+    }
+    .about-us-section .card-10-years-experience h2 {
+        font-size: 3rem;
+    }
+    .about-us-section .card-10-years-experience p {
+        font-size: 0.85rem;
+    }
+    .about-us-section h2.display-5 {
+        font-size: 1.8rem;
+    }
+    .adventure-unleashed-section h2 {
+        font-size: 2.2rem;
+    }
+    .service-card {
+        padding: 1rem;
+    }
+    /* About Us Image Grid adjustments for smaller screens */
+    .about-images-grid .col-6 {
+        height: unset; /* Let height be auto */
+        min-height: 200px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section p.lead {
+        font-size: 0.85rem;
+    }
+    .custom-btn-learn-more, .custom-btn-read-more {
+        padding: 0.6rem 1.8rem;
+        font-size: 1rem;
+    }
+    .about-us-section .col-12 {
+        text-align: center;
+    }
+    .about-us-section .card-10-years-experience {
+        min-height: unset;
+        padding: 1rem;
+    }
+    .footer .gallery-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer .gallery-grid .col-4 {
+        flex: 0 0 auto;
+        width: 30%;
+        margin: 0.5%;
+    }
+    /* About Us Image Grid adjustments for even smaller screens */
+    .about-images-grid .col-6 {
+        min-height: 150px; /* Further reduced min-height */
+        margin-bottom: 8px;
+    }
+}
